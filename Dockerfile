@@ -1,5 +1,5 @@
-# 7.10-0.17.3
-FROM node:7.10-slim
+# 7.10.0-0.17.3
+FROM node:7.10.0-slim
 
 RUN apt-get update \
 && apt-get install -y \
