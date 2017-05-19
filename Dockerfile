@@ -1,0 +1,21 @@
+# 7.10-0.17.3
+FROM node:7.10-slim
+
+RUN apt-get update \
+&& apt-get install -y \
+    make \
+    gcc \
+    g++ \
+    python \
+&& npm install -g sharp@0.17.3 \
+&& cd /usr/local/lib/node_modules/sharp \
+&& yarn link \
+&& apt-get remove --purge -y \
+    make \
+    gcc \
+    g++ \
+    python \
+    `apt-mark showauto` \
+&& rm -rf \
+    /var/lib/apt/lists/* \
+    /tmp/*
