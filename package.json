@@ -1,0 +1,13 @@
+{
+  "name": "node-slim-sharp",
+  "version": "0.1.0",
+  "main": "index.js",
+  "license": "MIT",
+  "bin": {
+    "node-slim-sharp-update": "./bin/update"
+  },
+  "versions": {
+    "node": "7.10.0",
+    "sharp": "0.17.3"
+  }
+}

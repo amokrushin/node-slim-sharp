@@ -1,0 +1,21 @@
+# ${NODE_VERSION}-${SHARP_VERSION}
+FROM node:${NODE_VERSION}-slim
+
+RUN apt-get update \\
+&& apt-get install -y \\
+    make \\
+    gcc \\
+    g++ \\
+    python \\
+&& npm install -g sharp@${SHARP_VERSION} \\
+&& cd /usr/local/lib/node_modules/sharp \\
+&& yarn link \\
+&& apt-get remove --purge -y \\
+    make \\
+    gcc \\
+    g++ \\
+    python \\
+    \`apt-mark showauto\` \\
+&& rm -rf \\
+    /var/lib/apt/lists/* \\
+    /tmp/*
