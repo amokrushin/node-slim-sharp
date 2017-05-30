@@ -40,9 +40,13 @@ console.log('Dockerfile updated');
 fs.writeFileSync(packageJsonPath, JSON.stringify(packageJson, null, 2));
 console.log('package.json updated');
 
+const commitComment = `node v${nodeVersion} sharp v${sharpVersion}`;
+const tagName = `${nodeVersion}-${sharpVersion}`;
+const tagComment = `node v${nodeVersion} sharp v${sharpVersion}`;
+
 execSync('git add --all', { stdio: 'inherit' });
-execSync(`git commit -m "node v${nodeVersion} sharp v${sharpVersion}"`, { stdio: 'inherit' });
-execSync(`git tag -a 7.10.0-0.17.3 -m "node v${nodeVersion} sharp v${sharpVersion}"`, { stdio: 'inherit' });
+execSync(`git commit -m "${commitComment}"`, { stdio: 'inherit' });
+execSync(`git tag -a ${tagName} -m "${tagComment}"`, { stdio: 'inherit' });
 execSync('git push --follow-tags -u origin master', { stdio: 'inherit' });
 
 function renderTemplate(template, context) {
