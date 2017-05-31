@@ -1,4 +1,4 @@
-# 7.10.0-0.18.0
+# 7.10.0-0.18.1
 FROM node:7.10.0-slim
 
 RUN apt-get update \
@@ -7,7 +7,7 @@ RUN apt-get update \
     gcc \
     g++ \
     python \
-&& npm install -g sharp@0.18.0 \
+&& npm install -g sharp@0.18.1 \
 && cd /usr/local/lib/node_modules/sharp \
 && yarn link \
 && apt-get remove --purge -y \
