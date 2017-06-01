@@ -8,7 +8,7 @@ const packageJson = require('../package.json');
 
 const versions = packageJson.versions;
 const sharpVersion = execSync('npm view sharp version', { encoding: 'utf8' }).replace(/[\s]/g, '');
-const nodeVersion = '7.10.0';
+const nodeVersion = '8.0.0';
 
 if (sharpVersion === versions.sharp && nodeVersion === versions.node) {
     console.log('Update is not required. Package already up-to-date');

@@ -1,5 +1,5 @@
-# 7.10.0-0.18.1
-FROM node:7.10.0-slim
+# 8.0.0-0.18.1
+FROM node:8.0.0-slim
 
 RUN apt-get update \
 && apt-get install -y \

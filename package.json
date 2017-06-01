@@ -7,7 +7,7 @@
     "node-slim-sharp-update": "./bin/update"
   },
   "versions": {
-    "node": "7.10.0",
+    "node": "8.0.0",
     "sharp": "0.18.1"
   }
 }
