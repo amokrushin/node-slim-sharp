@@ -7,7 +7,8 @@ RUN apt-get update \
     gcc \
     g++ \
     python \
-&& npm install -g sharp@0.18.1 \
+&& cd /usr/local/lib/node_modules \
+&& npm install --production sharp@0.18.1 \
 && cd /usr/local/lib/node_modules/sharp \
 && yarn link \
 && apt-get remove --purge -y \
